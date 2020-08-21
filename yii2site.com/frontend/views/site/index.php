@@ -14,7 +14,7 @@ $this->title = 'My Yii Application';
 <form id="wbd-widget-form" class="wbd-widget__form">
     <input type="hidden" id="page_id" name="page_id" value="111-qwerty-222">
     Name <input type="text" id="name" name="name" value="">
-    Email <input type="text" id="email" name="email" value="">
+    Email <input type="email" id="email" name="email" value="">
     <input type="submit" id="wbd-widget-update" class="wbd-widget__form-submit" value="Обновить">
 </form>
 <script src="http://yii2.com/js/widgets.js" charset="UTF-8"></script>
