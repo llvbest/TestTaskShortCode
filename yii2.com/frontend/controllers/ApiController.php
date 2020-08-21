@@ -30,13 +30,17 @@ class ApiController extends \JsonRpc2\Controller
         $values = (array)$data;
         foreach ($values as &$value) {
             $value = HtmlPurifier::process($value);
-            if(empty($value))
-                $value = null;
         }
         
         $modelData = Data::findOne(['page_uid' => $values['page_id']]);          
         $modelData->attributes = $values;
-        $json_data = $modelData->save();
+        if ($modelData->validate()) {
+            // все данные корректны
+            $modelData->save();
+        } else {
+            // данные не корректны: $errors - массив содержащий сообщения об ошибках
+            $modelData = ['error' => $modelData->errors];
+        }
         
         return $modelData;
     }

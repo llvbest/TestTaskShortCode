@@ -31,6 +31,9 @@ class Data extends \yii\db\ActiveRecord
         return [
             [['page_uid'], 'required'],
             [['page_uid'], 'unique', 'targetClass' => self::className(),'message' => 'Извините, уже существует в базе данных',],
+            [['email'], 'email'],
+            [['name', 'email'], 'trim'],
+            [['name', 'email'], 'default'],
             [['created'], 'safe'],
             [['page_uid', 'name', 'email'], 'string', 'max' => 255],
         ];

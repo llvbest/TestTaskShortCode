@@ -66,12 +66,25 @@
                         console.log('Request error');
                         return;
                     }
+
                     resp = JSON.parse(this.responseText);
                     if(resp.result){
                         if(resp.result.name)
                             name.value = resp.result.name;
                         if(resp.result.email)
                             email.value = resp.result.email;
+                        var el = document.getElementById('error');
+                        if(resp.result.error){
+                            var errorsMessage = '';
+                            if(resp.result.error.name)
+                                errorsMessage = resp.result.error.name;
+                            if(resp.result.error.name)
+                                errorsMessage += '<br />'+ resp.result.error.email
+                                
+                            el.innerHTML = errorsMessage;
+                        }
+                        if(resp.error)
+                            el.innerHTML = resp.error.message;
                     }
                 }
             }

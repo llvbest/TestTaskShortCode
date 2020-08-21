@@ -38,13 +38,16 @@ Access-Control-Allow-Origin ...
     Name <input type="text" id="name" name="name" value="">
     Email <input type="email" id="email" name="email" value="">
     <input type="submit" id="wbd-widget-update" class="wbd-widget__form-submit" value="Обновить">
+    <div id="error"></div>
 </form>
 <script src="http://yii2.com/js/widgets.js" charset="UTF-8"></script>
 <!-- end widget -->
 
 Также можно было в widgets.js:
 добавить динамически создавать всю html форму с полями
-добавить валидацию в модель для email, и вывод ошибок в виджете под полями при неправильном ввооде email
+вывод ошибок в виджете под полями при неправильном ввооде email
 {"jsonrpc":"2.0","id":"1","error":{"code":-32603,"message":"Internal error","data":null}}
+пример валидации данных:
+http://prntscr.com/u395eu
 
 crud для модели Data : http://yii2.com/data (http://prntscr.com/u1v1ot)
