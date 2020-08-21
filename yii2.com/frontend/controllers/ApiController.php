@@ -15,14 +15,14 @@ class ApiController extends \JsonRpc2\Controller
     
     public function actionView($id)
     {
-        $json_data = Data::find()->where(['page_uid' => $id])->one();
-        if(empty($json_data)){
+        $modelData = Data::find()->where(['page_uid' => $id])->one();
+        if(empty($modelData)){
             $data = new Data();
             $data->page_uid = HtmlPurifier::process($id);
             $data->save();
         }
         
-        return $json_data;
+        return $modelData;
     }
     
     public function actionUpdate($data)
