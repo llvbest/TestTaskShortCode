@@ -32,16 +32,16 @@ Access-Control-Allow-Origin ...
 лежит js виджета http://yii2.com/js/widgets.js
 
 Сам встраиваемый код, написан на нативном js без стилей и jquery, дабы не тянуть лишнее:
-<!-- Begin widget -->
-<form id="wbd-widget-form" class="wbd-widget__form">
-    <input type="hidden" id="page_id" name="page_id" value="111-qwerty-222">
-    Name <input type="text" id="name" name="name" value="">
-    Email <input type="email" id="email" name="email" value="">
-    <input type="submit" id="wbd-widget-update" class="wbd-widget__form-submit" value="Обновить">
-    <div id="error"></div>
-</form>
-<script src="http://yii2.com/js/widgets.js" charset="UTF-8"></script>
-<!-- end widget -->
+&lt;!-- Begin widget --&gt;
+&lt;form id="wbd-widget-form" class="wbd-widget__form"&gt;
+    &lt;input type="hidden" id="page_id" name="page_id" value="111-qwerty-222"&gt;
+    Name &lt;input type="text" id="name" name="name" value=""&gt;
+    Email &lt;input type="email" id="email" name="email" value=""&gt;
+    &lt;input type="submit" id="wbd-widget-update" class="wbd-widget__form-submit" value="Обновить"&gt;
+    &lt;div id="error"&gt;&lt;/div&gt;
+&lt;/form&gt;
+&lt;script src="http://yii2.com/js/widgets.js" charset="UTF-8"&gt;&lt;/script&gt;
+&lt;!-- end widget --&gt;
 
 **Также можно было в widgets.js:**
 добавить динамически создавать всю html форму с полями в js
